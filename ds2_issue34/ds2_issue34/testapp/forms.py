@@ -64,6 +64,7 @@ class StoreFKField_Broken(AutoModelSelect2Field):
         return "Forced as valid: %r" % (value,)
 
 class EmployeeForm(forms.ModelForm):
+    # Change this between StoreFKField_Broken and StoreFKField_Working
     store = StoreFKField_Broken()
 
     class Meta:
