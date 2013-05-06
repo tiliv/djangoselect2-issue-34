@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}List{% endblock title %}
+
+{% block content %}
+    <p>
+        <a href="{% url "create" %}">Create new</a>
+    </p>
+    <ol>
+        {% for obj in object_list %}
+            <li><a href="{% url "update" obj.pk %}">{{ obj }}</a> (Store={{ obj.store }})</li>
+        {% endfor %}
+    </ol>
+{% endblock content %}

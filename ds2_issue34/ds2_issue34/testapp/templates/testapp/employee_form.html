@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {% if form.instance.pk %}
+        Update
+    {% else %}
+        Create
+    {% endif %}
+{% endblock title %}
+
+{% block content %}
+    <p>Currently using field class "{{ field_class_name }}"</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>
+            <input type="submit" />
+        </p>
+    </form>
+{% endblock content %}
