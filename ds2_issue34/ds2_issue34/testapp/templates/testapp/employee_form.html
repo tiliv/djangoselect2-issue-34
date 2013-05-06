@@ -10,6 +10,10 @@
 
 {% block content %}
     <p>Currently using field class "{{ field_class_name }}"</p>
+    {% if form.instance.pk %}
+        <p>{{ form.instance }} is currently using Store={{ form.instance.store.pk }}</p>
+    {% endif %}
+
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
